@@ -14,7 +14,7 @@
 
 ### Ответ
 
-> select distinct address
+> SELECT distinct address
 > from address
 > where address like '% K%a %';
 
@@ -29,3 +29,29 @@
 > SELECT *
 > from payment
 > where amount > 10 and payment_date between '2005-06-15' and '2005-06-19';
+
+
+### Задание 3
+
+Получите последние пять аренд фильмов.
+
+
+### Ответ
+
+> SELECT id, rental_date
+> from rental
+> ORDER BY rental_date DESC
+> LIMIT 5;
+
+### Задание 4
+Одним запросом получите активных покупателей, имена которых Kelly или Willie.
+
+Сформируйте вывод в результат таким образом:
+
+все буквы в фамилии и имени из верхнего регистра переведите в нижний регистр, замените буквы 'll' в именах на 'pp'.`
+
+### Ответ
+
+> select customer_id, lower (first_name), lower (last_name), replace (lower (first_name), 'll', 'pp')
+> from customer
+> where first_name = 'Kelly' or first_name = 'Willie';
