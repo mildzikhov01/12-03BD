@@ -12,7 +12,7 @@
 
 > SELECT distinct address
 > from address
-> where address like '% K%a %';
+> where address like '% K%a %' and district not LIKE  '% %';
 
 
 ### Задание 2
@@ -24,7 +24,7 @@
 
 > SELECT *
 > from payment
-> where amount > 10 and payment_date between '2005-06-15' and '2005-06-19';
+> where amount > 10 and payment_date between '2005-06-15 00:00:00.000' and '2005-06-18 23:59:59.999'
 
 
 ### Задание 3
